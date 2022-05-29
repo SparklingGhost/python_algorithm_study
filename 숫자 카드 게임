@@ -1,0 +1,32 @@
+#mysol)
+n, m = map(int, input().split())
+num_card = []
+for i in range(n):
+  num_list = list(map(int, input().split()))
+  min_card = min(num_list)
+  num_card.append(min_card)
+ans = max(num_card)
+print(ans)
+
+'''
+#sol1)
+n, m = map(int, input().split())
+result = 0
+for i in range(n):
+  data = list(map(int, input().split()))
+  min_value = min(data)
+  result = max(result, min_value)
+print(result)
+'''
+'''
+#sol2)
+n, m = map(int, input().split())
+result = 0
+for i in range(n):
+  data = list(map(int, input().split()))
+  min_value = 10001
+  for a in data:
+    min_value = min(min_value, a)
+print(result)
+  result = max(result, min_value)
+'''
