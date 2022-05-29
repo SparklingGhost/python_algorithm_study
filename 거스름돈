@@ -1,0 +1,27 @@
+#mysol)
+n = int(input())
+a = n // 500
+b = n % 500
+c = b // 100
+d = b % 100
+e = d // 50
+f = d % 50
+g = f // 10
+h = f % 10
+
+ans = a + c + e + g
+print(ans)
+
+'''
+#sol1)
+n = int(input())
+count = 0
+
+coin_types = [500, 100, 50, 10]
+
+for coin in coin_types:
+  count += n // coin
+  n %= coin
+
+print(count)
+'''
