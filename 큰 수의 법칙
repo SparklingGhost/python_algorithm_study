@@ -1,0 +1,62 @@
+#mysol)
+n, m, k = map(int, input().split())
+num_list = list(map(int, input().split()))
+
+
+m_order = 0
+ans = 0
+big_index = 0
+
+while m_order < m:
+    big_num = num_list[0]
+    order = 0
+    for num in num_list:
+        if num > big_num:
+            big_num = num
+            big_index = num_list.index(num)
+    for i in range(k):
+        ans += big_num
+        order += 1
+        m_order += 1
+        if m_order >= m:
+          break
+    if order == k:
+        del num_list[big_index]
+        big_num2 = num_list[0]
+        for j in num_list:
+            if j > big_num2:
+                big_num2 = j
+        m_order += 1
+        ans += big_num2
+        num_list.append(big_num)
+        order = 0
+        if m_order >= m:
+          break
+                
+print(ans)
+
+'''  
+#sol1)
+n, m, k = map(int, input().split())
+data = list(map(int, input().split()))
+
+data.sort()
+first = data[n-1]
+second = data[n-2]
+result = 0
+
+while True:
+  for i in range(k):
+    if m == 0:
+      break
+    result += first
+    m -= 1
+  if m == 0:
+    break
+  result += second
+  m -= 1
+print(result)
+'''  
+  
+  
+  
